@@ -14,12 +14,14 @@ public:
                 if(cnt>nums.size()/2){
                     return nums[i];
                 }
-            }else{
-                if(cnt>nums.size()/2){
-                return nums[i];  
+            }else{    
+                // if(cnt>nums.size()/2){
+                // return nums[i];  
+                 cnt=1;
+           
             }
-                    cnt=1;
-                }  
+                   
+                
         }
         return 0;
     }
