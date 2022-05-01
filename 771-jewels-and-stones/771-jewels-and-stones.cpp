@@ -1,16 +1,16 @@
 class Solution {
 public:
     int numJewelsInStones(string jewels, string stones) {
-        unordered_set<char> lol;
+        unordered_set<int> mm;
         for(int x: jewels){
-            lol.insert(x);
+            mm.insert(x);
         }
-        int c=0;
-        for(int e:stones){
-            if(lol.find(e)!=lol.end()){
-                c++;
+        int cnt=0;
+        for(int y:stones){
+            if(mm.find(y)!=mm.end()){
+                cnt++;
             }
         }
-        return c;
+        return cnt;
     }
 };
