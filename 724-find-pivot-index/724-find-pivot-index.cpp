@@ -1,23 +1,15 @@
 class Solution {
 public:
     int pivotIndex(vector<int>& nums) {
-        int start=0;
-        int end=nums.size();
-        for(int i=0;i<end;i++){
-             int sumprev=0;
-             int sumnext=0;
-            for(int j=0;j<i;j++){
-                sumprev = sumprev+nums[j];
+        int rightsum = accumulate(nums.begin(),nums.end(),0);
+        int leftsum= 0;
+        for(int x=0;x<nums.size();x++){
+            rightsum -= nums[x];
+            if(rightsum==leftsum){
+                return x;
             }
             
-            for(int k=i+1;k<end;k++){
-                sumnext=sumnext + nums[k];
-                // cout <<"sec"<<sumnext<<" ";
-            }
-            
-            if(sumprev==sumnext){
-                return i;
-            }
+            leftsum+= nums[x];
         }
         return -1;
     }
