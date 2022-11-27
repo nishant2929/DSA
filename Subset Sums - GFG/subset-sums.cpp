@@ -27,7 +27,7 @@ void f(int n,vector<int> arr, int N,int sum,vector<int>&ans){
     {
         vector<int> ans;
        f(0,arr,N,0,ans);
-       sort(ans.begin(),ans.end());
+       //sort(ans.begin(),ans.end());
        return ans;
        
     }
