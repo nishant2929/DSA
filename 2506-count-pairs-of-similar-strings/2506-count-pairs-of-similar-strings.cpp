@@ -12,13 +12,16 @@ public:
             for(auto it : s){
                 ss = ss+it;
             }
-            mp[ss]++;
-        }
-        for(auto it : mp){
-            if(it.second>1){
-                cnt = cnt + (it.second)*(it.second-1)/2;
+            
+            if(mp.find(ss)!=mp.end()){
+                 cnt = cnt+ mp[ss];
+                mp[ss]++;
+            }else{
+                mp[ss]++;
             }
+           
         }
+        
         return cnt;
     }
 };
