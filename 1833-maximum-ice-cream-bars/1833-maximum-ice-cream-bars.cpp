@@ -7,7 +7,7 @@ public:
             if(costs[i]<=coins){
                 coins = coins- costs[i];
                 cnt++;
-                cout<<costs[i]<<" ";
+               // cout<<costs[i]<<" ";
             }
         }
         return cnt;
