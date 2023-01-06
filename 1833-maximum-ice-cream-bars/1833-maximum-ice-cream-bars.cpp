@@ -5,6 +5,7 @@ public:
         sort(costs.begin(),costs.end());
         for(int i=0;i<costs.size();i++){
             if(costs[i]<=coins){
+                if(costs[i]>coins)break;
                 coins = coins- costs[i];
                 cnt++;
                // cout<<costs[i]<<" ";
