@@ -15,7 +15,7 @@ public:
         }
         for(int i=0;i<v.size();i++){
             int right = abs(startIndex-v[i]);
-            int left = words.size() - abs(startIndex-v[i]);
+            int left = words.size() - right;
             ans = min(ans,min(left,right));
         }
         return ans;
