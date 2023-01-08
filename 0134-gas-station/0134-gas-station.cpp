@@ -11,19 +11,19 @@ public:
         if(totalgas<totalcost){
             return -1;
         }
-        int curFuel=0;
-        int startIndex=0;
+        
+        int start=0;
+        int curgas=0;
         
         for(int i=0;i<gas.size();i++){
-            if(curFuel < 0){
-                curFuel = 0;
-                startIndex = i;
+            if(curgas<0){
+                curgas = 0;
+                start= i;
             }
-
-            curFuel += (gas[i]-cost[i]);
+            
+            curgas+= gas[i]-cost[i];
         }
-        return startIndex;
-        
+        return start;
     }
 };
 
