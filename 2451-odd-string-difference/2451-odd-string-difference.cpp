@@ -1,35 +1,28 @@
 class Solution {
 public:
-    string oddString(vector<string>& words) {
-//         unordered_map<vector<int>v[words[i].size()],int> mp;
-//         for(int i=0;i<words.size();i++){
-//             vector<int>temp;
-//             for(int j=1;j<words[i].size();j++){
-//                 v.push_back(words[i][j]-words[i][j-1]);
-//             }
-//           if(mp.empty()){
-//               mp[temp]+= i;
-//           }else{
-//               if(mp.find(temp)!=mp.end()){
-                  
-//               }
-//           }
-//         }
-        
-       map<vector<int>,vector<string>> mp;
-        for(int i=0;i<words.size();i++){
-             vector<int>temp;
-             for(int j=1;j<words[i].size();j++){
-                 temp.push_back(words[i][j]-words[i][j-1]);
-        
-    }
-         mp[temp].push_back(words[i]);  
-}
-        for(auto it : mp){
-            if(it.second.size()==1){
-                return it.second[0];
-            }
+    bool name(string&s, string&ss){
+        for(int i=0;i<s.size()-1;i++){
+            if(s[i]-s[i+1]!=ss[i]-ss[i+1]){
+                return false;
+            }  
         }
+         return true;
+    } 
+    
+    string oddString(vector<string>& words) {
+        int same=0,nsame=0;
+      for(int i=1;i<words.size();i++){
+         if(name(words[0],words[i])){
+              same++;
+          }else{
+             nsame =i;
+         }
+      }
+     if(same>0){
+         return words[nsame];
+     }else{
+         return words[0];
+     }
         return "";
     }
 };
