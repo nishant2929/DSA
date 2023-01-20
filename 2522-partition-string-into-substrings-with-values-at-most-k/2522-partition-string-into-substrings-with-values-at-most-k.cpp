@@ -1,20 +1,20 @@
 class Solution {
 public:
     int minimumPartition(string s, int k) {
-        string str;
-        int cnt=0;
+        string ss ="";
+        int cnt=1;
         for(int i=0;i<s.size();i++){
-            str.push_back(s[i]);
-            if(stol(str)>k){
-                str="";
+            ss= ss+s[i];
+            if(stol(ss)>k){
+               // cout<<ss<<" ";
+                ss = "";
+                ss = ss+s[i];
                 cnt++;
-                str.push_back(s[i]);
-                if(stol(str)>k){
+                if(stol(ss)>k){
                     return -1;
                 }
-                
             }
         }
-        return cnt+1;
+        return cnt;
     }
 };
