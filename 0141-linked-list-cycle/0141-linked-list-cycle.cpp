@@ -14,11 +14,8 @@ public:
         if(head==NULL || head->next ==NULL){
             return false;
         }
-        while(two!=NULL){
+        while(two->next && two->next->next){
             one=one->next;
-            if(two->next==NULL){
-                return false;
-            }
             two=two->next->next;
             //two+2;
             if(one==two){
