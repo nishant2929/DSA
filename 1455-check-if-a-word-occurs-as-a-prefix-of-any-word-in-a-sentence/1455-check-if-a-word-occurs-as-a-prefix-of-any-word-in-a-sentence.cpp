@@ -1,16 +1,24 @@
 class Solution {
 public:
     int isPrefixOfWord(string sentence, string searchWord) {
-        stringstream s(sentence);
-        string a;
-        int cnt=0;
-       // bool shila=false;
-        while(s>>a){
-            cnt++;
-            if(a.substr(0,searchWord.size())==searchWord){
-                return cnt;
+        string s="";
+        int cnt=1;
+        int n=sentence.size();
+        bool flag=false;
+        int i=0;
+        while(i<n){
+            if(sentence[i]!=' '){
+                s+=sentence[i];
+                if(s==searchWord){
+                    flag =true;
+                    break;
+                }
+            }else{
+                cnt++;
+                s="";
             }
+            i++;
         }
-        return -1;
+        return flag==true?cnt:-1;
     }
 };
