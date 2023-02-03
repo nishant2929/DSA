@@ -7,10 +7,14 @@ public:
             int temp=0;
             for(int j=0;j<wall[i].size()-1;j++){
                 temp+=wall[i][j]; 
-                mp[temp] = mp[temp] +1;
-                ans=max(mp[temp],ans);
+               mp[temp]++;
             }
        
+        }
+        for(auto it: mp){
+            // cout<<it.first<<" "<<it.second<<endl;
+            ans=max(ans,it.second);
+           
         }
         
       return wall.size()-ans;
