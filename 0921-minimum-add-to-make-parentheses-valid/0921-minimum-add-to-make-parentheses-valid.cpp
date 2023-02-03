@@ -5,8 +5,8 @@ public:
         for(int i=0;i<s.size();i++){
             if(ss.size()==0){
                 ss.push(s[i]);
-                continue;
-            }
+              //  continue;
+            }else{
                   if(s[i]==')'){
                    if(ss.top()=='('){
                         ss.pop();
@@ -17,6 +17,7 @@ public:
                       ss.push(s[i]);
                   }
             }
+        }
         return ss.size();
     }
 };
