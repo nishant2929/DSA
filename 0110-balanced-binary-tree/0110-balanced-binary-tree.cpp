@@ -23,6 +23,8 @@ public:
     }
     
     bool isBalanced(TreeNode* root) {
-        return dfsheight(root)!=-1;
+        int ret =dfsheight(root);
+        if(ret==-1)return false;
+        return true;
     }
 };
