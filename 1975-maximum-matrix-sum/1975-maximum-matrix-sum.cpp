@@ -13,7 +13,7 @@ public:
                 }
             }
         }
-       cout<<minans<<" ";
+      // cout<<minans<<" ";
         if(cnt%2==0){
             return sum;
         }
