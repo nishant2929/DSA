@@ -12,19 +12,26 @@
 class Solution {
 public:
     int maxi=0;
+    void dfs(TreeNode*root){
+        if(root==NULL){
+            return;
+        }
+        int l = height(root->left);
+        int r= height(root->right);
+        maxi= max(maxi,l+r);
+        dfs(root->left);
+        dfs(root->right);
+    }
     int height(TreeNode* root){
         if(root==NULL){
             return 0;
         }
-        int maxleft= height(root->left);
-        int maxright = height(root->right);
-        
-        maxi = max(maxi,maxleft+maxright);
-        
-        return max(maxleft,maxright)+1;
+        int l = height(root->left);
+        int r= height(root->right);
+        return max(l,r)+1;
     }
     int diameterOfBinaryTree(TreeNode* root) {
-        height(root);
+        dfs(root);
         return maxi;
     }
 };
