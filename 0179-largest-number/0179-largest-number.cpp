@@ -1,9 +1,12 @@
-  bool lar(string&a ,string&b){
-        return a+b>b+a;
+bool lar(string&a ,string&b){
+        if(a+b>b+a){
+            return true;
+        }
+    return false;
     }
+  
 class Solution {
 public:
-  
     string largestNumber(vector<int>& nums) {
         vector<string> s;
         for(int i=0;i<nums.size();i++){
@@ -22,6 +25,7 @@ public:
         return ans;
     }
 };
+
 
 // bool comp(string&a ,string&b){
 //     return a+b>b+a;
