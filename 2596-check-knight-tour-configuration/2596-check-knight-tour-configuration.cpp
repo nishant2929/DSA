@@ -18,8 +18,7 @@ public:
         
         for(int i=1; i<ans.size(); i++){
             if(abs(ans[i].first - ans[i-1].first) + abs(ans[i].second - ans[i-1].second) != 3 or
-               (abs(ans[i].first - ans[i-1].first) == 3 && abs(ans[i].second - ans[i-1].second) == 0) or
-               (abs(ans[i].first - ans[i-1].first) == 0 && abs(ans[i].second - ans[i-1].second) == 3)){
+               (abs(ans[i].first - ans[i-1].first) == 3) or (abs(ans[i].second - ans[i-1].second) == 3)){
                 return false;
             }
         }
